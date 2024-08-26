@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-10 12:30+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\_Base.html:15
+msgid "Dong!"
+msgstr "دنگ"
+
+#: .\_Base.html:25
+msgid "Welcome"
+msgstr "خوش آمدید"
+
+#: .\_Base.html:28
+msgid "profile"
+msgstr "پروفایل"
+
+#: .\_Base.html:31
+msgid "logout"
+msgstr "خروج"
+
+#: .\_Base.html:35
+msgid "login"
+msgstr "ورود"
+
+#: .\_Base.html:38
+msgid "signup"
+msgstr "ایجاد حساب"
+
+#: .\registration\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Hello from %(site_name)s.\n"
+"\n"
+"if you requested this email please click on this link down blow :\n"
+"%(activate_url)s\n"
+"\n"
+msgstr ""
+
+#: .\registration\email\email_confirmation_subject.txt:3
+msgid " please confirm email : "
+msgstr ""
+
+#: .\registration\email_confirm.html:6 .\registration\email_confirm.html:11
+msgid "Confirm Email Address"
+msgstr ""
+
+#: .\registration\email_confirm.html:17
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
+"address for user %(user_display)s."
+msgstr ""
+
+#: .\registration\email_confirm.html:24
+msgid "Confirm"
+msgstr ""
+
+#: .\registration\email_confirm.html:30
+#, python-format
+msgid ""
+"Unable to confirm %(email)s because it is already confirmed by a different "
+"account."
+msgstr ""
+
+#: .\registration\email_confirm.html:36
+#, python-format
+msgid ""
+"This email confirmation link expired or is invalid. Please <a href=\"%"
+"(email_url)s\">issue a new email confirmation request</a>."
+msgstr ""

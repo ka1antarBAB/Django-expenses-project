@@ -1,0 +1,41 @@
+{#{% extends '_Base.html' %}#}
+{##}
+{#{% block title %}#}
+{#	Create Expense Page#}
+{#{% endblock title %}#}
+{##}
+{#{% block content %}#}
+{#    <form action="" method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form }}#}
+{#        <button type="submit">ثبت</button>#}
+{#    </form>#}
+{#{% endblock content %}#}
+
+
+
+{% extends '_Base.html' %}
+{% load i18n %}
+
+{% block title %}
+    Create Expense Page
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">{% translate 'create new expense' %}</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button type="submit" class="btn btn-primary">{% translate 'submit' %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

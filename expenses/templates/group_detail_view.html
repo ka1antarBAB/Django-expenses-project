@@ -1,0 +1,108 @@
+{#{% extends '_Base.html' %}#}
+{##}
+{#{% block title %}#}
+{#    Grupe Detail View#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    {% for member in group_members %}#}
+{#        <li>{{ member.username }}</li>#}
+{#    {% endfor %}#}
+{#    <a href="{% url 'expenses:group-edit' group.id %}">#}
+{#        <button type="submit"> edit group</button>#}
+{#    </a>#}
+{#    <br>#}
+{#    <hr>#}
+{#    {% for expense in expenses %}#}
+{#        <div>#}
+{#            {{ expense.created_by }}#}
+{#            {{ expense.description }}#}
+{#            {{ expense.amount }}#}
+{#            {{ expense.datetime_created }}#}
+{#            {% if request.user != expense.created_by  %}#}
+{#                <a href="{% url 'expenses:transaction-new' pk=expense.id %}">#}
+{#                    <button>جزیات</button>#}
+{#                </a>#}
+{#            {% else %}#}
+{#                <button disabled>جزیات</button>#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        ------------------------------#}
+{#    {% endfor %}#}
+{#    <hr>#}
+{#    <div>#}
+{#        <a href="{% url 'expenses:group-expense-new' group.id %}">#}
+{#            <button>ایجاد یک هزینه</button>#}
+{#        </a>#}
+{#    </div>#}
+{#    <br><br>#}
+{#    <div>#}
+{#        <a href="{% url 'expenses:group-list' %}">#}
+{#            <button>back to list view</button>#}
+{#        </a>#}
+{#    </div>#}
+{##}
+{##}
+{#{% endblock content %}#}
+
+{% extends '_Base.html' %}
+{% load i18n %}
+
+{% block title %}
+    Grupe Detail View
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">{% translate 'Group Detail' %}</h1>
+
+        <div class="mb-4">
+            <h2 class="mb-3"> {% translate 'members' %}</h2>
+            <ul class="list-group">
+                {% for member in group_members %}
+                    <li class="list-group-item">{{ member.username }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="{% url 'expenses:group-edit' group.id %}">
+            <button type="submit"> {% translate 'edit group' %}</button>
+        </a>
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <h2 class="mb-3">{% translate 'expenses' %}</h2>
+            {% for expense in expenses %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{% translate 'created by' %} {{ expense.created_by }}</h5>
+                        <p class="card-text">
+                            <strong>{% translate 'description' %}:</strong> {{ expense.description }}<br>
+                            <strong>{% translate 'amount' %}:</strong> {{ expense.amount }}<br>
+                            <strong>{% translate 'date' %}:</strong> {{ expense.datetime_created }}
+                        </p>
+{#                        {% if request.user != expense.created_by %}#}
+                            <a href="{% url 'expenses:transaction-new' pk=expense.id %}" class="btn btn-primary">
+                                {% translate 'detail' %}
+                            </a>
+{#                        {% else %}#}
+{#                            <button class="btn btn-secondary" disabled>جزیات</button>#}
+{#                        {% endif %}#}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <hr class="my-4">
+
+        <div class="mb-4">
+            <a href="{% url 'expenses:group-expense-new' group.id %}" class="btn btn-success">
+                  {% translate 'create new expense' %}
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'expenses:group-list' %}" class="btn btn-secondary">
+                 {% translate 'back to list of group' %}
+            </a>
+        </div>
+    </div>
+{% endblock %}

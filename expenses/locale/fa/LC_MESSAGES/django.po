@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-10 13:01+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\templates\expense_create_view.html:26
+#: .\templates\group_detail_view.html:99
+msgid "create new expense"
+msgstr "ایجاد یک هزینه جدید"
+
+#: .\templates\expense_create_view.html:34 .\templates\group_list_view.html:41
+msgid "submit"
+msgstr "ثبت"
+
+#: .\templates\group_detail_view.html:57
+msgid "Group Detail"
+msgstr "جزییات گروه"
+
+#: .\templates\group_detail_view.html:60
+msgid "members"
+msgstr "اعضا"
+
+#: .\templates\group_detail_view.html:68
+msgid "edit group"
+msgstr "لیست گروه ها"
+
+#: .\templates\group_detail_view.html:73
+msgid "expenses"
+msgstr "هزینه ها"
+
+#: .\templates\group_detail_view.html:77
+msgid "created by"
+msgstr "ساخته شده توسط"
+
+#: .\templates\group_detail_view.html:79
+msgid "description"
+msgstr "توضیحات"
+
+#: .\templates\group_detail_view.html:80
+msgid "amount"
+msgstr "مبلغ"
+
+#: .\templates\group_detail_view.html:81
+msgid "date"
+msgstr "تاریخ"
+
+#: .\templates\group_detail_view.html:85
+msgid "detail"
+msgstr "جزییات"
+
+#: .\templates\group_detail_view.html:104
+msgid "back to list of group"
+msgstr "برگشت به لیست گروه ها"
+
+#: .\templates\group_list_view.html:25
+msgid "Grupe List Page"
+msgstr "صفحه گروه ها"
+
+#: .\templates\group_list_view.html:32
+msgid "create new group"
+msgstr "ایجاد گروه جدید"
+
+#: .\templates\group_list_view.html:48
+msgid "list of groups"
+msgstr "لیست گروه ها"

@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-10 13:01+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\templates\expense_create_view.html:26
+#: .\templates\group_detail_view.html:99
+msgid "create new expense"
+msgstr "créer une nouvelle dépense"
+
+#: .\templates\expense_create_view.html:34 .\templates\group_list_view.html:41
+msgid "submit"
+msgstr "soumettre"
+
+#: .\templates\group_detail_view.html:57
+msgid "Group Detail"
+msgstr "Détail du groupe"
+
+#: .\templates\group_detail_view.html:60
+msgid "members"
+msgstr "membres"
+
+#: .\templates\group_detail_view.html:68
+msgid "edit group"
+msgstr "groupe d'édition"
+
+#: .\templates\group_detail_view.html:73
+msgid "expenses"
+msgstr "dépenses"
+
+#: .\templates\group_detail_view.html:77
+msgid "created by"
+msgstr "créé par"
+
+#: .\templates\group_detail_view.html:79
+msgid "description"
+msgstr "description"
+
+#: .\templates\group_detail_view.html:80
+msgid "amount"
+msgstr "montante"
+
+#: .\templates\group_detail_view.html:81
+msgid "date"
+msgstr "date"
+
+#: .\templates\group_detail_view.html:85
+msgid "detail"
+msgstr "détail"
+
+#: .\templates\group_detail_view.html:104
+msgid "back to list of group"
+msgstr "retour à la liste du groupe"
+
+#: .\templates\group_list_view.html:25
+msgid "Grupe List Page"
+msgstr "Page de liste de groupe"
+
+#: .\templates\group_list_view.html:32
+msgid "create new group"
+msgstr "créer un nouveau groupe"
+
+#: .\templates\group_list_view.html:48
+msgid "list of groups"
+msgstr "liste des groupes"

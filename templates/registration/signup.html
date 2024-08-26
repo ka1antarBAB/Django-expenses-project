@@ -1,0 +1,17 @@
+{% extends '_Base.html' %}
+
+{#{% load crispy_forms_filters %}#}
+
+{{% block page_title %}
+    signup page
+{% endblock page_title %}
+{% block content %}
+    <h2>welcome to my signup page </h2>
+    <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Signup">
+    </form>
+    <hr>
+{% endblock content %}

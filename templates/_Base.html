@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load i18n %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <!-- اضافه کردن Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'expenses:group-list' %}">{% trans 'Dong!' %}</a>
+        <p>languages</p> |
+        <form action="{% url 'set_language' %}" method="POST">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+            <select name="language" onchange="this.form.submit()">
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                <option value="fa" {% if LANGUAGE_CODE == 'fa' %}selected{% endif %}>Persian</option>
+                <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>French</option>
+                </select>
+        </form>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        {% translate 'Welcome' %} {{ user.username }}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'expenses:profile' %}"
+                           aria-label="Profile">{% translate 'profile' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" aria-label="logout">{% translate 'logout' %}</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" aria-label="Login">{% translate 'login' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}" aria-label="Signup">{% translate 'signup' %}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% if messages %}
+        <div class="alert alert-info">
+            <ul class="mb-0">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{#    {% extends '_Base.html' %}#}
+    {#{% load crispy_forms_tags %}#}
+{##}
+{#    {{% block page_title %}#}
+{#        login page#}
+{#    {% endblock page_title %}#}
+{#    {% block content %}#}
+{#        <h2>Are you sure tou wanna logout ! </h2>#}
+{#        <form action="" method="POST">#}
+{#            {% csrf_token %}#}
+{#            {{ form }}#}
+{#            <input type="submit" value="Logout">#}
+{#        </form>#}
+{#    {% endblock content %}#}
+
+{% extends '_Base.html' %}
+
+{% block page_title %}
+    Logout Page
+{% endblock page_title %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-4">آیا مطمئن هستید که می‌خواهید خارج شوید؟</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-danger">خروج</button>
+        </form>
+    </div>
+{% endblock content %}

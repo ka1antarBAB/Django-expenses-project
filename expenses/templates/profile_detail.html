@@ -1,0 +1,16 @@
+{% extends '_Base.html' %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+    <div>
+        {{ account.user.username }}
+    </div>
+    <div>
+        <p>
+            your account balance is : {{ account.balance }}
+        </p>
+    </div>
+{% endblock content %}

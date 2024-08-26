@@ -1,0 +1,36 @@
+{#{% extends '_Base.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{##}
+{#{{% block title %}#}
+{#    login page#}
+{#{% endblock title %}#}
+{#{% block content %}#}
+{#    <h2>welcome to my login page </h2>#}
+{#    <form action="" method="POST">#}
+{#        {% csrf_token %}#}
+{#        {{ form }}#}
+{#        <input type="submit" value="Login">#}
+{#    </form>#}
+{#{% endblock content %}#}
+
+{% extends '_Base.html' %}
+
+{% block title %}
+    Login Page
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-4">به صفحه ورود خوش آمدید</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.username }}
+            </div>
+            <div class="mb-3">
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary">ورود</button>
+        </form>
+    </div>
+{% endblock content %}

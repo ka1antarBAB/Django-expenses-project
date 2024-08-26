@@ -1,0 +1,85 @@
+{#{% extends '_Base.html' %}#}
+{##}
+{#{% block title %}#}
+{#    Create Transaction Page#}
+{#{% endblock title %}#}
+{##}
+{#{% block content %}#}
+{#    {% for participant in participants %}#}
+{#    	<li>{{ participant.username }}</li>#}
+{#    {% endfor %}#}
+{##}
+{#    <p>your share is {{ share_per_person }}</p>#}
+{#    {% if is_paid %}#}
+{#        شما نیازی به پرداخت کردن ندارید#}
+{#    {% elif in_participants %}#}
+{#        <p>شما در این هزینه سهم ندارید </p>#}
+{#    {% else %}#}
+{#        <form action="" method="POST">#}
+{#            {% csrf_token %}#}
+{#            {{ form }}#}
+{#            <button type="submit">پرداخت</button>#}
+{#        </form>#}
+{##}
+{#    {% endif %}#}
+{#{% endblock content %}#}
+
+
+{% extends '_Base.html' %}
+
+{% block title %}
+    Create Transaction Page
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">ایجاد تراکنش</h1>
+
+        <!-- نمایش شرکت‌کنندگان -->
+        <div class="mb-4">
+            <h2 class="mb-3">شرکت‌کنندگان</h2>
+            <ul class="list-group mb-3">
+                {% for participant in participants %}
+                    <li class="list-group-item">{{ participant.username }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if is_creator %}
+            <h2 class="mb-3">وضعیت پرداخت ها</h2>
+            <ul class="list-group mb-3">
+                {% for participent, is_paid in payment_status %}
+                    <li class="list-group mb-3">
+                        {{ participent.username }}
+                        {% if is_paid %}
+                            پرداخت شده است ✅
+                        {% else %}
+                            پرداخت ندشه است ❌
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <!-- بررسی وضعیت پرداخت -->
+        {% if is_paid %}
+            <div class="alert alert-success" role="alert">
+                شما نیازی به پرداخت کردن ندارید.
+            </div>
+        {% elif in_participants %}
+            <div class="alert alert-warning" role="alert">
+                شما در این هزینه سهم ندارید.
+            </div>
+        {% else %}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-4">پرداخت</h3>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="btn btn-primary">پرداخت</button>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}
